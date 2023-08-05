@@ -1,0 +1,53 @@
+<div class="container">
+    <form class="db-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+        <div class="inputs">
+            <div class="form-group">
+                <label class="input-label" for="day-input"> DA Y </label>
+                <input class="input-field" type="text" id="day-input" formControlName="days" />
+                <div *ngIf="(inputForm.controls['days'].dirty || inputForm.controls['days'].touched)" class="alert">
+                    <div *ngIf="errors.invalidDay">
+                        Must be a valid day
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="input-label" for="month-input"> MONTH </label>
+                <input class="input-field" type="text" id="month-input" formControlName="months" />
+                <div *ngIf="(inputForm.controls['months'].dirty || inputForm.controls['months'].touched)" class="alert">
+                    <div *ngIf="errors.invalidMonth">
+                        Must be a valid month
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="input-label" for="year-input"> YEAR </label>
+                <input class="input-field" type="text" id="year-input" formControlName="years" />
+                <div *ngIf="(inputForm.controls['years'].dirty || inputForm.controls['years'].touched)" class="alert">
+                    <div *ngIf="errors.invalidYear">
+                        Must be in the past
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rest">
+            <hr>
+            <button class="submit-button" type="submit"> <img src="./assets/images/icon-arrow.svg" /> </button>
+            <hr class="hidden">
+        </div>
+    </form>
+
+    <div class="outputs">
+        <div class="year">
+            <span class="value"> {{ (years === null || errors.invalidYear) ? "--" : years }} </span> years
+        </div>
+        <div class="month">
+            <span class="value"> {{ (months === null || errors.invalidMonth) ? "--" : months }} </span> months
+        </div>
+        <div class="days">
+            <span class="value"> {{ (days === null || errors.invalidDay) ? "--" : days }} </span> days
+        </div>
+    </div>
+</div>
