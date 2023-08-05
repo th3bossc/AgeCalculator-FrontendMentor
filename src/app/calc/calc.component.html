@@ -2,8 +2,8 @@
     <form class="db-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
         <div class="inputs">
             <div class="form-group">
-                <label class="input-label" for="day-input"> DA Y </label>
-                <input class="input-field" type="text" id="day-input" formControlName="days" />
+                <label class="input-label" for="day-input"> DAY </label>
+                <input class="input-field" type="text" id="day-input" formControlName="days" placeholder="DD" />
                 <div *ngIf="(inputForm.controls['days'].dirty || inputForm.controls['days'].touched)" class="alert">
                     <div *ngIf="errors.invalidDay">
                         Must be a valid day
@@ -13,7 +13,7 @@
             
             <div class="form-group">
                 <label class="input-label" for="month-input"> MONTH </label>
-                <input class="input-field" type="text" id="month-input" formControlName="months" />
+                <input class="input-field" type="text" id="month-input" formControlName="months" placeholder="MM"/>
                 <div *ngIf="(inputForm.controls['months'].dirty || inputForm.controls['months'].touched)" class="alert">
                     <div *ngIf="errors.invalidMonth">
                         Must be a valid month
@@ -23,7 +23,7 @@
             
             <div class="form-group">
                 <label class="input-label" for="year-input"> YEAR </label>
-                <input class="input-field" type="text" id="year-input" formControlName="years" />
+                <input class="input-field" type="text" id="year-input" formControlName="years" placeholder="YYYY"/>
                 <div *ngIf="(inputForm.controls['years'].dirty || inputForm.controls['years'].touched)" class="alert">
                     <div *ngIf="errors.invalidYear">
                         Must be in the past

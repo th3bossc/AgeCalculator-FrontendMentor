@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://th3bossc.github.io/AgeCalculator-FrontendMentor)
+- Live Site URL: [View Site](https://th3bossc.github.io/AgeCalculator-FrontendMentor)
 
 ## My process
 
